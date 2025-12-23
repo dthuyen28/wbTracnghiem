@@ -1,0 +1,95 @@
+/* Khai báo biến màu sắc để dễ quản lý */
+:root {
+    --primary-color: #4facfe;
+    --primary-hover: #1d4ed8;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --bg-gray: #f3f4f6;
+    --error-red: #ef4444;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-gray);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Đổi .auth-card thành .login-box theo HTML của bạn */
+.login-box {
+    background: white;
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    box-sizing: border-box; /* Đảm bảo padding không làm tràn input */
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Định dạng cho button (thay vì .btn-primary) */
+button[type="submit"] {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+    margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Định dạng thông báo lỗi */
+.error {
+    color: var(--error-red);
+    background-color: #fee2e2;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    text-align: center;
+}
