@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm câu hỏi</title>
+    <link rel="stylesheet" href="/static/css/add_question.css">
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <h2>Thêm câu hỏi</h2>
+            <span>Quản lý ngân hàng câu hỏi trắc nghiệm</span>
+        </div>
+
+        <form method="post">
+            <div class="form-group">
+                <label>Nội dung câu hỏi</label>
+                <textarea name="question" placeholder="Nhập nội dung câu hỏi..." required></textarea>
+            </div>
+
+            <div class="grid">
+                <input type="text" name="a" placeholder="Đáp án A" required>
+                <input type="text" name="b" placeholder="Đáp án B" required>
+                <input type="text" name="c" placeholder="Đáp án C" required>
+                <input type="text" name="d" placeholder="Đáp án D" required>
+            </div>
+
+            <div class="form-group">
+                <label>Đáp án đúng</label>
+                <select name="correct" required>
+                    <option value="">-- Chọn đáp án --</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+
+            <div class="actions">
+                <button class="btn-save">Lưu câu hỏi</button>
+                <a href="/dashboard" class="btn-back">Quay lại</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

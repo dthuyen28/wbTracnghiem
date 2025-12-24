@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Quản lý câu hỏi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Trắc Nghiệm</h2>
+
+        <nav>
+            <a href="/dashboard" class="active">📚 Câu hỏi</a>
+            <a href="/question/add">➕ Thêm câu hỏi</a>
+            <a href="/logout">🚪 Đăng xuất</a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="content">
+        <div class="header">
+            <h1>Quản lý câu hỏi</h1>
+            <a href="/question/add" class="btn-add">➕ Thêm câu hỏi</a>
+        </div>
+
+        <!-- bảng danh sách (chưa có dữ liệu thật) -->
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nội dung câu hỏi</th>
+                    <th>Đáp án đúng</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Python là ngôn ngữ gì?</td>
+                    <td>A</td>
+                    <td>
+                        <button class="btn-edit">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Flask thuộc loại framework nào?</td>
+                    <td>B</td>
+                    <td>
+                        <button class="btn-edit">Sửa</button>
+                        <button class="btn-delete">Xóa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+       
+    </main>
+
+</div>
+
+</bod
