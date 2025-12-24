@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for,render_template
+from flask import Flask, redirect, url_for,render_template,session
 from controllers.auth_controller import auth_bp
 from controllers.question_controller import question_bp
 
@@ -15,7 +15,9 @@ def index():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+        if 'user' not in session:
+             return redirect(url_for('auth.login'))
+        return render_template('dashboard.html')
 
 
 if __name__ == '__main__':
