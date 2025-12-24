@@ -1,5 +1,11 @@
 import json
+import os
 
-def load_json(path):
-    with open(path, 'r', encoding='utf-8') as f:
+DATA_FILE = "data/users.json" 
+
+def load_users():
+    if not os.path.exists(DATA_FILE):
+        return []
+
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)

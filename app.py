@@ -1,16 +1,18 @@
 from flask import Flask, redirect, url_for
 from controllers.auth_controller import auth_bp
 
-
-app = Flask(__name__, template_folder="views")
-app.secret_key = "secret_key"
+app = Flask(__name__, template_folder='views')
+app.secret_key = 'secret_key'
 
 app.register_blueprint(auth_bp)
 
-
-@app.route("/")
+@app.route('/')
 def index():
-    return redirect(url_for("auth.register"))
+    return redirect(url_for('auth.login'))
 
-if __name__ == "__main__":
+@app.route('/dashboard')
+def dashboard():
+    return "Đăng nhập thành công"
+
+if __name__ == '__main__':
     app.run(debug=True)

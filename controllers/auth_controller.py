@@ -1,23 +1,23 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session
 from models.user_model import check_login, is_email_exists, add_user
 
-auth_bp = Blueprint("auth", __name__, template_folder='../')
+auth_bp = Blueprint("auth", __name__, template_folder='../views')
 
-@auth_bp.route("/login", methods=["GET", "POST"])
+@auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
-    message = ""
-    if request.method == "POST":
-        email = request.form["email"]
-        password = request.form["password"]
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
 
         user = check_login(email, password)
         if user:
             session["user"] = user
-            return redirect("/dashboard")
+            return redirect(url_for('dashboard'))
         else:
             message = "Sai email hoặc mật khẩu"
     return render_template("login.html", message=message)
 
+    return render_template('login.html')
 
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():

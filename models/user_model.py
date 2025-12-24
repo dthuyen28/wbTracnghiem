@@ -1,4 +1,6 @@
+
 import json
+import os
 
 USER_FILE = "data/users.json"
 
@@ -19,4 +21,11 @@ def add_user(user):
     user["id"] = len(users) + 1
     users.append(user)
     save_users(users)
+
+def check_login(email, password):
+    users = load_users()
+    for user in users:
+        if user['email'] == email and user['password'] == password:
+            return user
+    return None
 
