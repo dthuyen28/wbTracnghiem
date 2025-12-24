@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* nền mờ */
+.background {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top left, #ffffff55, transparent 60%),
+                radial-gradient(circle at bottom right, #ffffff33, transparent 60%);
+}
+
+/* căn giữa */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* card glass */
+.card {
+    width: 100%;
+    max-width: 620px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* header */
+.header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 26px;
+    color: #2d2d2d;
+}
+
+.header span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background: #fafafa;
+    transition: all 0.25s ease;
+}
+
+textarea {
+    min-height: 110px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    background: #fff;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.18);
+}
+
+/* đáp án */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+/* nút */
+.actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.btn-save {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 16px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(118, 75, 162, 0.4);
+}
+
+.btn-back {
+    flex: 1;
+    padding: 14px;
+    border-radius: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    color: #555;
+    background: #f1f1f1;
+}
+
+.btn-back:hover {
+    background: #e3e3e3;
+}
