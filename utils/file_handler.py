@@ -19,3 +19,9 @@ def load_users():
 
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
+
+def load_json(path):
+    if not os.path.exists(path):
+        return []
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
