@@ -3,12 +3,12 @@ from models.user_model import check_login, is_email_exists, add_user
 
 auth_bp = Blueprint("auth", __name__, template_folder='../views')
 
-@auth_bp.route('/login', methods=['GET', 'POST'])
+@auth_bp.route("/login", methods=["GET", "POST"])
 def login():
-    message = None
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+    message = ""
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
 
         user = check_login(email, password)
         if user:
@@ -18,7 +18,6 @@ def login():
             message = "Sai email hoặc mật khẩu"
     return render_template("login.html", message=message)
 
-    return render_template('login.html')
 
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
@@ -28,13 +27,10 @@ def register():
         email = request.form["email"]
         password = request.form["password"]
 
-        if not fullname or not email or not password:
-            message = "Vui lòng nhập đầy đủ thông tin"
+        if is_email_exists(email):
+            message = "Email đã tồn tại"
         else:
-            message = "Đăng ký thành công (demo)"
+            add_user(fullname, email, password)
+            return redirect("/login")
 
     return render_template("register.html", message=message)
-@auth_bp.route("/logout")
-def logout():
-    session.clear()
-    return redirect(url_for('index'))
