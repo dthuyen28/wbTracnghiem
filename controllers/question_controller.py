@@ -55,3 +55,10 @@ def add():
         return redirect(url_for('question.add'))
 
     return render_template('question.html')
+
+@question_bp.route("/edit", methods=["GET", "POST"])
+def edit_question( ):
+    if request.method == "POST":
+        return redirect("/dashboard")
+   
+    return render_template("edit_question.html")
