@@ -1,0 +1,53 @@
+.hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 10%;
+    background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem; /* Tạo khoảng cách giữa 2 nút */
+}
+
+/* Tùy chỉnh riêng cho nút trong Hero to hơn một chút */
+.hero-actions .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .header nav {
+        display: none; /* Ẩn menu trên mobile nếu muốn làm menu rút gọn */
+    }
+}
