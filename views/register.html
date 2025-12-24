@@ -1,0 +1,42 @@
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+</head>
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2>Đăng ký</h2>
+            <p style="color: var(--text-light); margin-bottom: 2rem;">Chào mừng bạn tham gia cùng chúng tôi!</p>
+        </div>
+
+        <form method="post">
+            <div class="form-group">
+                <label for="fullname">Họ tên</label>
+                <input id="fullname" name="fullname" type="text" placeholder="Nguyễn Văn A" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="name@company.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input id="password" name="password" type="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Tạo tài khoản</button>
+        </form>
+
+        {% if message %}
+        <div style="margin-top: 1rem; color: #dc2626; font-size: 0.875rem; text-align: center; background: #fee2e2; padding: 10px; border-radius: 6px;">
+            {{ message }}
+        </div>
+        {% endif %}
+        
+        <p style="text-align: center; margin-top: 1.5rem; font-size: 0.875rem; color: var(--text-light);">
+            Đã có tài khoản? <a href="/login" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">Đăng nhập</a>
+        </p>
+    </div>
+</div>

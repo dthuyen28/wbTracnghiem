@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from models.user_model import check_login
+from models.user_model import check_login, is_email_exists, add_user
 
 auth_bp = Blueprint(
     'auth',
@@ -21,3 +21,18 @@ def login():
             return render_template('login.html', error="Sai email hoặc mật khẩu")
 
     return render_template('login.html')
+
+@auth_bp.route("/register", methods=["GET", "POST"])
+def register():
+    message = ""
+    if request.method == "POST":
+        fullname = request.form["fullname"]
+        email = request.form["email"]
+        password = request.form["password"]
+
+        if not fullname or not email or not password:
+            message = "Vui lòng nhập đầy đủ thông tin"
+        else:
+            message = "Đăng ký thành công (demo)"
+
+    return render_template("register.html", message=message)
