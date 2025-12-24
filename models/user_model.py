@@ -21,5 +21,11 @@ def add_user(fullname, email, password):
     }
     users.append(new_user)
     save_json(USER_FILE, users)
+def check_login(email, password):
+    users = load_json(FILE)
+    for user in users:
+        if user['email'] == email and user['password'] == password:
+            return user
+    return None
 
 
