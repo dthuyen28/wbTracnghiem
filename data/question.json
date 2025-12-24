@@ -1,13 +1,3 @@
 {
-  "questions": [
-    {
-    "id": 1,
-    "question": "Python là ngôn ngữ gì?",
-    "a": "Biên dịch",
-    "b": "Thông dịch",
-    "c": "Máy",
-    "d": "Markup",
-    "correct": "B"
-  }
-]
+  "questions": []
 }

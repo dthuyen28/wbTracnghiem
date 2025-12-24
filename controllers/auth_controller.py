@@ -5,10 +5,10 @@ auth_bp = Blueprint("auth", __name__, template_folder='../views')
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
-    message = None
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
+    message = ""
+    if request.method == "POST":
+        email = request.form["email"]
+        password = request.form["password"]
 
         user = check_login(email, password)
         if user:

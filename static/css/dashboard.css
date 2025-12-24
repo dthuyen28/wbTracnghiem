@@ -121,19 +121,3 @@ tr:hover {
     font-size: 13px;
     color: #777;
 }
-
-.btn-edit {
-    padding: 8px 14px;
-    border-radius: 10px;
-    border: 2px solid #667eea;
-    background: transparent;
-    color: #667eea;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.btn-edit:hover {
-    background: #667eea;
-    color: #fff;
-}
